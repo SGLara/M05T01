@@ -9,7 +9,7 @@ class QueryBuilderController extends Controller
 {
     public function index()
     {
-        return view('query_b.query_builder');
+        return view('query');
     }
 
     public function showQueryOne()

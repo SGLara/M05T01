@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+Route::view('/', 'home')->name('home');
+Route::view('/M05-exercises', 'm05t01')->name('prev_homework');
+
 Route::get('/exercise1','ExerciseOneController@getView')->name('exercise1');
 Route::post('/results1','ExerciseOneController@sendInfo')->name('results1');
 
@@ -25,3 +28,5 @@ Route::post('/results7','ExerciseSevenController@sendInfo')->name('results7');
 
 Route::get('/exercise8','ExerciseEightController@getView')->name('exercise8');
 Route::post('/results8','ExerciseEightController@sendInfo')->name('results8');
+
+Route::view('/query_builder', 'QueryBuilderController@index')->name('query_builder');

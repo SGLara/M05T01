@@ -52,7 +52,7 @@ Route::get('/query15', 'QueryBuilderController@showQueryFifteen')->name('query15
 Route::get('/query16', 'QueryBuilderController@showQuerySixteen')->name('query16');
 Route::get('/query17', 'QueryBuilderController@showQuerySeventeen')->name('query17');
 Route::get('/query18', 'QueryBuilderController@showQueryEighteen')->name('query18');
-Route::get('/query19', 'QueryBuilderController@showQueryTwenty')->name('query19');
+Route::get('/query19', 'QueryBuilderController@showQueryNineteen')->name('query19');
 Route::get('/query20', 'QueryBuilderController@showQueryTwenty')->name('query20');
 Route::get('/query21', 'QueryBuilderController@showQueryTwentyOne')->name('query21');
 Route::get('/query22', 'QueryBuilderController@showQueryTwentyTwo')->name('query22');

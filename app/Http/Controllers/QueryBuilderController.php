@@ -14,7 +14,7 @@ class QueryBuilderController extends Controller
 
     public function showQueryOne()
     {
-        $query1 = DB::table('cities')->orderBy('name', 'ASC')->get();
+        $query1 = DB::table('cities')->orderBy('name')->get();
 
         echo "<center><table border='5px'><tr><th>City Table (ASC): </th></tr>";
         foreach ($query1 as $city) {
@@ -25,7 +25,7 @@ class QueryBuilderController extends Controller
 
     public function showQueryTwo()
     {
-        $query2 = DB::table('cities')->select('*')->orderBy('name', 'DESC')->get();
+        $query2 = DB::table('cities')->orderBy('name', 'DESC')->get();
 
         echo "<center><table border='5px'><tr><th>City Table (DESC): </th></tr>";
         foreach ($query2 as $city) {
@@ -38,8 +38,8 @@ class QueryBuilderController extends Controller
     {
         $query3 = DB::table('countries')
             ->select('name', 'name_en')
-            ->orderBy('name_en', 'ASC')
-            ->orderBy('name', 'ASC')
+            ->orderBy('name_en')
+            ->orderBy('name')
             ->get();
 
         echo "<center><table border='5px'><tr><th>English Name</th><th>Spanish Name</th></tr>";
@@ -130,7 +130,7 @@ class QueryBuilderController extends Controller
             ->select('primer_nombre', 'segundo_nombre', 'primer_apellido', 'segundo_apellido', 'nota_paes')
             ->where('carrera', 'Ingeniería en Sistemas')
             ->whereBetween('ano_ingreso', [2000, 2010])
-            ->orderBy('nota_paes', 'ASC')
+            ->orderBy('nota_paes')
             ->get();
 
         echo "<center><table border='5px'>
@@ -309,7 +309,7 @@ class QueryBuilderController extends Controller
     {
         $query18 = DB::table('students')
             ->select('carrera', 'nota_admision')
-            ->orderBy('nota_admision', 'ASC')
+            ->orderBy('nota_admision')
             ->get();
 
         echo "<center><table border='5px'>
@@ -360,7 +360,6 @@ class QueryBuilderController extends Controller
     public function showQueryTwenty()
     {
         $query20 = DB::table('students')
-            ->select('*')
             ->where('primer_apellido', 'LIKE', "A%")
             ->where('email', 'LIKE', "%gmail%")
             ->where('ano_ingreso', '<', 2010)
